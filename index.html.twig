@@ -1,0 +1,149 @@
+{% extends 'baseFront.html.twig' %}
+
+{% block title %}Hello EmployerFrontController!{% endblock %}
+
+{% block body %}
+
+
+    <!-- ======= Blog Section ======= -->
+    <!-- End Blog Section -->
+
+
+
+
+
+
+    <div class="app-content content">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+        <div class="content-wrapper">
+            <div class="content-body">
+                <!-- Basic example and Profile cards section start -->
+                <section class="vuexy-checkbox-sizes">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+
+                                <div class="card-content">
+                                    <div class="card-body">
+                                        <section id="search-bar">
+                                            <div class="search-bar">
+                                                <form role="search" id="nav-search-form" method="post" action="{{ path('rechercheCandidat') }}">
+                                                    <fieldset class="form-group position-relative has-icon-left">
+
+                                                        <input type="text" class="form-control round" id="search"  name="search" placeholder="Search By Town">
+                                                        <br>
+                                                        <div class="btn-group btn-group-sm" aria-label="Set Select2 option"> <button type="submit" class="btn gradient-light-primary text-white">
+                                                               Search
+                                                            </button> </div>
+
+                                                        <div class="form-control-position">
+                                                            <i class="feather icon-search px-1"></i>
+                                                        </div>
+                                                    </fieldset>
+                                                </form>
+
+                                                <form role="search" id="nav-search-form" method="post" action="{{ path('triNomCandidat') }}">
+
+
+                                                    <div class="btn-toolbar" role="toolbar" aria-label="Programmatic control">
+                                                        <div class="btn-group btn-group-sm" aria-label="Set Select2 option">
+                                                            <button class="js-programmatic-set-val btn btn-outline-primary mr-1 mb-1">
+                                                                Sort by Name
+                                                            </button>
+                                                        </div>
+
+                                                </form>
+                                                <form role="search" id="nav-search-form" method="post" action="{{ path('triCandidat') }}">
+                                                    <div class="btn-toolbar" role="toolbar" aria-label="Programmatic control">
+                                                        <div class="btn-group btn-group-sm" aria-label="Set Select2 option">
+                                                            <button class="js-programmatic-set-val btn btn-outline-primary mr-1 mb-1">
+                                                                Candidat
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                                <form role="search" id="nav-search-form" method="post" action="{{ path('triStagiaire') }}">
+                                                    <div class="btn-toolbar" role="toolbar" aria-label="Programmatic control">
+                                                        <div class="btn-group btn-group-sm" aria-label="Set Select2 option">
+                                                            <button class="js-programmatic-set-val btn btn-outline-primary mr-1 mb-1">
+                                                                Stagiaire
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+
+                                            </div>
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+            </section>
+
+                <section id="basic-examples">
+                    <div class="row match-height">
+
+                        {% for candidat in candidats %}
+                            <div class="card">
+                                <div class="card-content">
+                                    <img id="img"   style="max-width:500px; max-height: 200px; " src="/uploads/{{candidat.img}}">
+                                    <div class="card-body">
+                                        <h5>{{ candidat.nom ~ candidat.prenom }}</h5>
+                                        <p class="card-text  mb-0">{{ candidat.typeCandidat }}</p>
+                                        <span class="card-text">{{ candidat.town }}</span>
+                                        <div class="card-btns d-flex justify-content-between mt-2">
+                                            <a href="#" class="btn gradient-light-primary text-white">Follow</a>
+                                            <a href="{{ path('candidat_showFront', {'id': candidat.id}) }}" class="btn btn-outline-primary">Read More</a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                    <!-- Profile Cards Starts -->
+
+                    <!-- Profile Cards Ends -->
+            </div>
+            </section>
+
+            <!-- // Basic example and Profile cards section end -->
+
+            <!-- Overlay Image and Chat Section Starts -->
+
+            <!-- Overlay Image and Chat Section Starts -->
+
+            <!-- Admin and Video Section Starts -->
+
+            <!-- Admin and Video Section Starts -->
+
+            <!-- Timeline Starts -->
+
+            <!-- Timeline Ends -->
+
+        </div>
+
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

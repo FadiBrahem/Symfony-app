@@ -1,0 +1,13 @@
+
+
+
+
+{% block body %}
+
+
+    {{ include('candidat_front/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('candidat_front') }}">back to list</a>
+
+    {{ include('candidat_front/_delete_form.html.twig') }}
+{% endblock %}
